@@ -1,12 +1,16 @@
 import { RotatingArrow, useOrientation } from '@clue/comp-lib';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const Arrow: React.FC = () => {
-  const  { webkitCompassHeading } = useOrientation();
+  const DO = useOrientation();
+
+  useEffect(() => {
+    console.log(DO);
+  }, []);
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <RotatingArrow angle={webkitCompassHeading || 0} />
+      <RotatingArrow angle={DO.alpha || 0} />
     </div>
   );
 };
