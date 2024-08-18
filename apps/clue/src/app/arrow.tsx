@@ -10,7 +10,7 @@ const Arrow: React.FC = () => {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <RotatingArrow angle={DO.alpha || 0} />
+      <RotatingArrow angle={DO?.webkitCompassHeading || 0} />
     </div>
   );
 };
