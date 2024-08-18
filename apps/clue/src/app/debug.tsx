@@ -10,7 +10,12 @@ export const Debugger = () => {
 
   return (
     <div style={arrowStyle}>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <pre>{data && JSON.stringify({...data}, null, 2)}</pre>
+      {data?.alpha}
+      {data?.beta}
+      {data?.gamma}
+      {data?.absolute}
+      {({...data} as any)?.webkitCompassHeading} 
     </div>
   );
 };
