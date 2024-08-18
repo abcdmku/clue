@@ -1,3 +1,4 @@
+import { RotatingArrow } from '@clue/comp-lib';
 import React, { useEffect, useState } from 'react';
 
 const Arrow: React.FC = () => {
@@ -17,17 +18,13 @@ const Arrow: React.FC = () => {
     };
   }, []);
 
-  const arrowStyle: React.CSSProperties = {
-    transform: `rotate(${heading || 0}deg)`,
-    transition: 'transform 0.3s ease-in-out',
-  };
 
   return (
-    <div>
-      <div style={arrowStyle}>↑</div>
-      <p>Heading: {heading !== null ? `${heading.toFixed(2)}°` : 'N/A'}</p>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <RotatingArrow angle={heading || 0} />
     </div>
   );
 };
 
 export default Arrow;
+
