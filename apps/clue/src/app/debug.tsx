@@ -11,11 +11,11 @@ export const Debugger = () => {
   return (
     <div style={arrowStyle}>
       <pre>{data && JSON.stringify({...data}, null, 2)}</pre>
-      {data?.alpha}
-      {data?.beta}
-      {data?.gamma}
-      {data?.absolute}
-      {({...data} as any)?.webkitCompassHeading} 
+      <ul>{data?.alpha}</ul>
+      <ul>{data?.beta}</ul>
+      <ul>{data?.gamma}</ul>
+      <ul>{data?.absolute}</ul>
+      <ul>{({...data} as any)?.webkitCompassHeading} </ul>
     </div>
   );
 };
